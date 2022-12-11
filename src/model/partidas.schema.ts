@@ -1,6 +1,6 @@
 import mongoose  from "mongoose";
-import { PokemonMaster } from "./usuarios.model";
-import { BasePokemon } from "./motorista.model";
+import { Usuario } from "./usuarios.model";
+import { BaseMotorista } from "./motorista.model";
 import { Partidas } from "./partidas.model";
 
 const schema = new mongoose.Schema<Partidas>({
@@ -9,4 +9,4 @@ const schema = new mongoose.Schema<Partidas>({
   winner: Object,
 });
 
-export const PokemonMastersSchema = mongoose.model('pokemonmasters',schema);
+export const UsuariosSchema = mongoose.model('usuarios',schema);
