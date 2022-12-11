@@ -1,13 +1,12 @@
 import mongoose  from "mongoose";
-import { PokemonMaster } from "./usuarios.model";
-import { BasePokemon } from "./motorista.model";
+import { Usuario } from "./usuarios.model";
+import { BaseMotorista } from "./motorista.model";
 
-const schema = new mongoose.Schema<PokemonMaster>({
+const schema = new mongoose.Schema<Usuario>({
   firstName: String,
   lastName: String,
   gender: String,
-  pokemons: Array<BasePokemon>,
-  level: String
+  pokemons: Array<BaseMotorista>,
 });
 
-export const PokemonMastersSchema = mongoose.model('pokemonmasters',schema);
+export const UsuarioSchema = mongoose.model('usuario',schema);

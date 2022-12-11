@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { PokemonSchema } from "../model/motorista.schema";
+import { MotoristaSchema } from "../model/motorista.schema";
 
-// Obtener los poquemones
+
 export const getMotoristas = (req: Request, res: Response) => {
-	PokemonSchema.find().limit(150)
+	MotoristaSchema.find().limit(150)
 		.then((result) => {
 			res.send(result);
 			res.end();
@@ -11,9 +11,9 @@ export const getMotoristas = (req: Request, res: Response) => {
 		.catch((error) => console.error(error));
 };
 
-//Obtener solo uno
+
 export const getMotorista = (req: Request, res: Response) => {
-	PokemonSchema.find({ _id: req.params.id })
+	MotoristaSchema.find({ _id: req.params.id })
 		.then((result) => {
 			res.send(result);
 			res.end();
@@ -22,24 +22,12 @@ export const getMotorista = (req: Request, res: Response) => {
 };
 
 export const addMotorista = (req: Request, res: Response) => {
-	const p = new PokemonSchema({
+	const p = new MotoristaSchema({
 		id: req.body.id,
 		gender: req.body.gender,
 		num: req.body.num,
 		name: req.body.name,
 		img: req.body.img,
-		type: req.body.type,
-		height: req.body.height, 
-		weight: req.body.weight, 
-		candy: req.body.candy, 
-		candy_count: req.body.candy_count, 
-		egg: req.body.egg, 
-		spawn_chance: req.body.spawn, 
-		avg_spawns: req.body.avg_spawns, 
-		spawn_time: req.body.spawn_time, 
-		multipliers: req.body.multipliers, 
-		weaknesses: req.body.weaknesses, 
-		next_evolution: req.body.next_evolution,
 	});
   p.save().then(saveResponse => {
     res.send(saveResponse);
@@ -52,43 +40,14 @@ export const addMotorista = (req: Request, res: Response) => {
 };
 
 export const updateMotorista = (req: Request, res: Response) => {
-	// const p = new PokemonSchema({
-	// 	id: req.body.id,
-	// 	gender: req.body.gender,
-	// 	num: req.body.num,
-	// 	name: req.body.name,
-	// 	img: req.body.img,
-	// 	type: req.body.type,
-	// 	height: req.body.height, 
-	// 	weight: req.body.weight, 
-	// 	candy: req.body.candy, 
-	// 	candy_count: req.body.candy_count, 
-	// 	egg: req.body.egg, 
-	// 	spawn_chance: req.body.spawn, 
-	// 	avg_spawns: req.body.avg_spawns, 
-	// 	spawn_time: req.body.spawn_time, 
-	// 	multipliers: req.body.multipliers, 
-	// 	weaknesses: req.body.weaknesses, 
-	// 	next_evolution: req.body.next_evolution,
-	// });
-  PokemonSchema.updateOne({_id: req.params.id}, {
+	
+  MotoristaSchema.updateOne({_id: req.params.id}, {
 		id: req.body.id,
 		gender: req.body.gender,
 		num: req.body.num,
 		name: req.body.name,
 		img: req.body.img,
-		type: req.body.type,
-		height: req.body.height, 
-		weight: req.body.weight, 
-		candy: req.body.candy, 
-		candy_count: req.body.candy_count, 
-		egg: req.body.egg, 
-		spawn_chance: req.body.spawn, 
-		avg_spawns: req.body.avg_spawns, 
-		spawn_time: req.body.spawn_time, 
-		multipliers: req.body.multipliers, 
-		weaknesses: req.body.weaknesses, 
-		next_evolution: req.body.next_evolution,
+		
 	}).then(updateResponse => {
     res.send({message: 'Registro actualizado', updateResponse});
     res.end();
@@ -99,7 +58,7 @@ export const updateMotorista = (req: Request, res: Response) => {
 };
 
 export const deleteMotorista = (req: Request, res: Response) => {
-	PokemonSchema.remove({_id: req.params.id})
+	MotoristaSchema.remove({_id: req.params.id})
 	.then(removeResult => {
 		res.send({message: 'Registro eliminado', removeResult});
 		res.end();
