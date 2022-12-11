@@ -1,7 +1,7 @@
 import mongoose  from "mongoose";
 import { Usuario } from "./usuarios.model";
 import { BaseMotorista } from "./motorista.model";
-import { Partidas } from "./partidas.model";
+import { Partidas } from "./pedidos.model";
 
 const schema = new mongoose.Schema<Partidas>({
   player1: JSON,

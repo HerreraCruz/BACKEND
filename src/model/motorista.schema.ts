@@ -1,5 +1,5 @@
 import mongoose  from "mongoose";
-import { Evolution, Motorista, Gender } from "./motorista.model";
+import { Motorista } from "./motorista.model";
 
 const schema = new mongoose.Schema<Motorista>({
   _id: mongoose.Types.ObjectId,

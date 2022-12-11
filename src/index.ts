@@ -1,7 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import pokemonesRouter from "./routers/motoristas.router";
-import pokemoneMastersRouter from "./routers/usuarios.router";
+import motoristasRouter from "./routers/motoristas.router";
+import usuariosRouter from "./routers/usuarios.router";
+import administradoresRouter from "./routers/administradores.router";
 import { Database } from "./utils/database";
 import cors from 'cors';
 
@@ -18,7 +19,7 @@ app.use(express.urlencoded({extended:true}));
 app.use('/usuarios', usuariosRouter);
 app.use('/motoristas', motoristasRouter);
 app.use('/administradores', administradoresRouter);
-app.use('/asociados', asociadosRouter);
+//app.use('/asociados', asociadosRouter);
 
 app.listen(port, () => {
 	console.log(`Servidor modificado https://localhost:${port}`);
