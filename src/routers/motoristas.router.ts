@@ -3,7 +3,7 @@ import { addMotorista, deleteMotorista, getMotorista, getMotoristas, updateMotor
 
 const routerMasters = express.Router();
 
-routerMasters.get("/", getMotoristass);
+routerMasters.get("/", getMotoristas);
 routerMasters.get("/:id", getMotorista);
 routerMasters.post("/", addMotorista);
 routerMasters.put("/:id", updateMotorista);

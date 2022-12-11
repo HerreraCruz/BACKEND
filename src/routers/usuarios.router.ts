@@ -1,10 +1,10 @@
 import express from "express";
-import { addPokemonToMaster, getPokemonMasters } from "../controllers/usuarios.controller";
+import { addUsuario, getUsuario, getUsuarios } from "../controllers/usuarios.controller";
 
 const router = express.Router();
 
-router.get("/", getPokemonMasters);
-router.get("/:id", getPokemonMasters);
-router.put("/:id/pokemons", addPokemonToMaster);
+router.get("/", getUsuarios);
+router.get("/:id", getUsuario);
+router.put("/:id/pokemons", addUsuario);
 
 export default router;
