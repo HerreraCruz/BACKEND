@@ -1,9 +1,9 @@
-import { BasePokemon, Gender } from "./motorista.model";
+import { BaseMotorista, Gender } from "./motorista.model";
 
-export interface PokemonMaster {
+export interface Usuario {
     firstName: string;
     lastName: string;
     gender: Gender;
-    pokemons: Array<BasePokemon>;
+    pokemons: Array<BaseMotorista>;
     level: string;
 }
